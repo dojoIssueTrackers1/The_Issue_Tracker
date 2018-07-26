@@ -2,213 +2,10 @@
 <html>
 <head>
 	<title>Create a Order Problem</title>
+	{% load static %}
+	<link rel="stylesheet" href="{% static 'order_manager_app/css/format.css' %}">
 	<style type="text/css">
 	/* Universal css */
-		* {
-			margin: 0;
-			padding: 0;
-		}
-
-		.FL {float: left;}
-		.FR {float: right;}
-
-		.cfb {
-			clear: both;
-		}
-
-		.FL {float: left;}
-		.FR {float: right;}
-		.mgT2P {margin-top: 2%;}
-		.mgT5P {margin-top: 5%;}
-		.mgB5P {margin-bottom: 5%;}
-
-		.headerParentDivBackground {
-			background-color: #2f363f;
-		}
-
-		.headerChildPosDiv {
-			width: 75%;
-			margin: 0 auto;
-		}
-
-		.customChildPostDiv {
-			width: 75%;
-			margin: 5% auto;
-
-		}
-
-		.welcomeMessage {
-		    float: left;
-		    margin-left: 25%;
-		    color: white;
-		    margin-top: 2%;
-		}
-
-		/* Logo and Navigation */
-		img {margin-top: 2%;}
-		ul {list-style-type: none;}
-		li {display: inline-block; margin-right: 2em;}
-		li:last-child {margin-right: 0;}
-		li a {color: white; text-decoration: none; opacity: 0.5;}
-		li a:hover {opacity: 1;}
-
-
-		/* Create an order issue */
-		form {
-		    width: 40%;
-		    margin: 0 auto;
-		    margin-top: 5%;			
-		}
-
-		form p {
-		    float: left;
-		    margin-right: 2%;
-		    width: 25%;
-		    font-size: 20px;			
-		}
-
-		form input[type='text'], form input[type='number'] {
-		    width: 60%;
-		    line-height: 30px;
-		    font-size: 20px;
-		    margin-bottom: 5%;
-		    border: 1px solid black;
-		    box-shadow: 3px 3px 0px 0px black;			
-		}
-
-		form h3 {
-			margin-bottom: 10%;
-			font-size: 30px;
-		}
-
-		form input[type="submit"] {
-		    float: right;
-		    width: 20%;
-		    height: 2em;
-		    color: white;
-		    font-size: 22px;
-		    border: 1px solid black;
-		    box-shadow: 3px 3px 0px 0px black;
-		    border-radius: 12px;
-		    background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
-		    cursor: pointer;
-		}
-
-		.backLink {
-		    float: left;
-		    border: 2px solid black;
-		    box-shadow: 2px 2px 0px 0px black;
-		    padding: 5px 20px;
-		    background-color: indianred;
-		    color: white;
-		    text-decoration: none;
-		    margin: 5%;
-		    font-size: 1.4em;
-		}
-
-
-		/* Footer */
-		.footerParentDivBackground {
-			background-color: #2f363f;
-			min-height: 100px;
-			position: fixed;
-			left: 0;
-			bottom: 0;
-			width: 100%;
-		}
-
-		/* Create/Review/Manage */
-		.footerSiteNav {
-		    margin: 2% 0%;
-		    float: left;		
-		}
-
-		.footerSiteNav a {
-		    text-decoration: none;
-		    margin-right: 2%;
-		    border: 2px solid black;
-		    color: orange;
-		    border-radius: 10px;
-		    display: block;
-		    padding: 0.5em;
-		    text-align: center;
-		    margin-bottom: 10%;			
-		}
-
-		.footerSiteNav a:hover {
-			background-color: orange;
-			color: white;
-		}
-
-		.footerSiteNav a:first-child {
-			color: green;
-		}
-
-		.footerSiteNav a:first-child:hover {
-			background-color: green;
-			color: white;
-		}
-
-		.footerSiteNav a:last-child {
-			color: indianred;
-		}
-
-		.footerSiteNav a:last-child:hover {
-			background-color: indianred;
-			color: white;
-		}
-
-		/* View/Edit/Delete*/
-		.footerSiteMapEdit {
-			float: left;
-			margin: 2%;
-		}
-
-		.footerSiteMapEdit a {  
-		    text-decoration: none;
-		    margin-right: 2%;
-		    border: 2px solid black;
-		    color: royalblue;
-		    border-radius: 10px;
-		    display: block;
-		    padding: 0.5em 0.8em;
-		    text-align: center;
-		    margin-bottom: 10%;			
-		}
-
-		.footerSiteMapEdit a:hover {
-			background-color: royalblue;
-			color: white;
-		}
-
-		.footerSiteMapEdit a:first-child {
-			color: darkorange;
-		}
-
-		.footerSiteMapEdit a:first-child:hover {
-			background-color: darkorange;
-			color: white;
-		}
-
-		.footerSiteMapEdit a:last-child {
-			color: red;
-		}
-
-		.footerSiteMapEdit a:last-child:hover {
-			background-color: red;
-			color: white;
-		}
-
-		.headerChildPosDiv h3 {
-			color: white;
-			margin-top: 1%;
-		}
-
-		.headerChildPosDiv p {
-			color: white;
-			text-align: center;
-			margin-bottom: 1%;
-		}
 
 	</style>
 </head>
@@ -224,14 +21,14 @@
 				</div>
 
 				<div>
-					<h1 class="welcomeMessage">User</h1>
+					<h1 class="welcomeMessage">{{request.session.first_name}}</h1>
 				</div>
 
 				<!-- Navbar -->
 				<div class="FR mgT2P">
 					<ul class="mgT2P">
 						<li><a href="/dashboard">Home</a></li>
-						<li><a href="">Logout</a></li>
+						<li><a href="/logout">Logout</a></li>
 					</ul>
 					<div class="cfb"></div>
 				</div>
@@ -243,7 +40,7 @@
 		</div>
 
 		<div class="headerChildPosDiv">
-			<form action="/create" method="POST">
+			<form action="/createNew" method="POST">
 				{% csrf_token %}
 				<h3>Create Order Issue Follow-up</h3>
 
@@ -254,13 +51,13 @@
 				<input type="Number" name="cust_id" min=1>
 
 				<p>Issue Type: </p>
-				<input type="text" name="issueType">
+				<input type="text" name="issueType" placeholder="i.e return, damaged, defective, etc">
 
 				<p>Description: </p>
 				<input type="text" name="description">
 
 				<p>Priority: </p>
-				<input type="Number" name="priority" min=1 max=3>
+				<input type="Number" name="priority" placeholder="1 = low, 2 = medium, 3 = high" min=1 max=3>
 
 				<div class="cfb"></div>
 
@@ -278,19 +75,14 @@
 		<!-- Footer -->
 		<div class="footerParentDivBackground">
 			<div class="headerChildPosDiv">
-				<h3>Site Map</h3>
+				<h3 class="footerSiteMapH3">Site Map</h3>
 				<div class="footerSiteNav">
 					<a href="/create">Create</a>
-					<a href="/create">Review</a>
-					<a href="/create">Manage</a>
-				</div>
-				<div class="footerSiteMapEdit">
-					<a href="/view">View</a>
-					<a href="/edit">Edit</a>
-					<a href="/manage">Delete</a>
+					<a href="/show_all">Review</a>
+					<a href="/manage">Manage</a>
 				</div>
 				<div class="cfb"></div>
-				<p>Copyright &copy2018</p>
+				<p class="footerSiteMapP">Copyright &copy2018</p>
 			</div>
 		</div>
 

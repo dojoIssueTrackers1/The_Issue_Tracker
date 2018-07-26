@@ -93,8 +93,8 @@ class IssueManager(models.Manager):
 
 
 class Issue(models.Model):
-    order_number = models.IntegerField
-    customer_id = models.IntegerField
+    order_number = models.IntegerField()
+    customer_id = models.IntegerField()
     issue_type = models.CharField(max_length=20)
     description = models.CharField(max_length=255)
     priority = models.IntegerField()

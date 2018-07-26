@@ -1,0 +1,451 @@
+	/* Universal css */
+		* {
+			margin: 0;
+			padding: 0;
+			font-family: "helvetica new", sans-serif;
+		}
+
+		::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		::-webkit-scrollbar-track-piece {
+			box-shadow: inset 1px 1px 5px black;
+		}
+
+		::-webkit-scrollbar-thumb {
+			background-color: black;
+			border-radius: 5px;
+		}
+
+		::-webkit-scrollbar-thumb:hover {
+			background-color: indianred;
+		}
+
+		.cfb {
+			clear: both;
+		}
+
+		.FL {float: left;}
+		.FR {float: right;}
+		.mgT2P {margin-top: 2%;}
+		.mgT5P {margin-top: 5%;}
+
+		/********************************************Header CSS ************************************/
+
+		.headerParentDivBackground {
+			background-color: #2f363f;
+		}
+
+		.headerChildPosDiv {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.headerChildPosDiv h3 {
+			margin-top: 2%;
+		}
+
+		.siteDescriptioParentDiv {
+		    width: 40%;
+		    float: left;
+		    margin-left: 20%;
+		    margin-top: 2%;
+		}
+
+		.siteDescriptionChildDiv {
+			margin: 2% 0%;
+		}
+
+		.welcomeMessage {
+		    float: left;
+		    margin-left: 25%;
+		    color: white;
+		    margin-top: 2%;
+		}
+
+		.siteDescriptionH11 {
+		    color: white;
+		    opacity: 0.9;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+		.siteDescriptionH12 {
+		    margin-left: 15%;
+		    color: white;
+		    opacity: 0.7;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+		.siteDescriptionH13 {
+		    margin-left: 30%;
+		    color: white;
+		    opacity: 0.5;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+
+		img {margin-top: 2%;}
+		ul {list-style-type: none;}
+		li {display: inline-block; margin-right: 2em;}
+		li:last-child {margin-right: 0;}
+		li a {color: white; text-decoration: none; opacity: 0.5;}
+		li a:hover {opacity: 1;}
+
+		/* Create Button */
+		.siteMainButtonsDiv {
+			float: left;
+			width: 25%;
+			margin-top: 2%;
+		}
+		.createOrderProbDiv {
+			float: left;
+			width: 30%;
+			height: 40px;
+			margin-left: -35%;
+			border: 2px solid black;
+			border-radius: 12px;
+			background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
+			opacity: 0.5;
+		}
+
+		.createOrderProbDiv a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 3px 25px;
+		    cursor: pointer;
+		    font-size: 30px;
+		    line-height: 40px;
+		}
+
+		.createOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+		.viewOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+		.manageOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+
+		/************************** Create Form ******************************/
+
+/* Create an order issue */
+		form {
+		    width: 40%;
+		    margin: 0 auto;
+		    margin-top: 5%;			
+		}
+
+		form p {
+		    float: left;
+		    margin-right: 2%;
+		    width: 25%;
+		    font-size: 20px;			
+		}
+
+		form input[type="number"]::-webkit-inner-spin-button, form input[type="number"]::-webkit-outer-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+
+		form input[type='text'], form input[type='number'] {
+		    width: 60%;
+		    line-height: 30px;
+		    font-size: 20px;
+		    margin-bottom: 5%;
+		    border: 1px solid black;
+		    box-shadow: 3px 3px 0px 0px black;			
+		}
+
+		form h3 {
+			margin-bottom: 10%;
+			font-size: 30px;
+		}
+
+		form input[type="submit"] {
+		    float: right;
+		    width: 20%;
+		    height: 2em;
+		    color: white;
+		    font-size: 22px;
+		    border: 1px solid black;
+		    box-shadow: 3px 3px 0px 0px black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
+		    cursor: pointer;
+		}
+
+/************************ Review All ******************************************************/
+		.manageReviewAll {
+		    float: right;
+		    width: 9%;
+		    height: 30px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+		}
+
+		.manageReviewAll a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 6px 32px;
+		    font-size: 20px;
+		    line-height: 30px;
+		}
+
+/****************** Manage All *************************************************/
+
+		.reviewAllManage {
+			float: right;
+			width: 9%;
+			height: 30px;
+			border: 2px solid black;
+			border-radius: 12px;
+			background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+		}
+
+		.reviewAllManage a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 3px 18px;
+		    font-size: 20px;
+		    line-height: 30px;
+		}
+
+/**********************  Edit ***********************************************/
+
+		.editLink {
+		    float: right;
+		    border: 2px solid black;
+		    box-shadow: 2px 2px 0px 0px black;
+		    padding: 5px 20px;
+			background: linear-gradient(#e1e3cf -40%, #2318e6 70%);
+		    color: white;
+		    text-decoration: none;
+		    margin: 5%;
+		}
+
+		/* Details */
+		.detailsParentDiv {
+		    width: 25%;
+		    float: left;
+		    border: 2px solid black;
+		    margin-top: 10%;
+		    margin-left: 36%;			
+		}
+
+/***********************  Update  *****************************************/
+
+		.UpdateButton {
+			float: right;
+			width: 20%;
+			height: 2em;
+			margin-bottom: 2%;
+			margin-right: 8%;
+			color: white;
+			font-size: 22px;
+			border: 1px solid black;
+			box-shadow: 3px 3px 0px 0px black;
+			border-radius: 12px;
+			background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
+			cursor: pointer;
+		}
+
+		
+
+		.backLink {
+		    float: left;
+		    border: 2px solid black;
+		    box-shadow: 2px 2px 0px 0px black;
+		    padding: 5px 20px;
+		    background-color: indianred;
+		    color: white;
+		    text-decoration: none;
+		    margin: 5%;
+		    font-size: 1.4em;
+		}
+
+		/* View Button */
+		.viewOrderProbDiv {
+		    float: left;
+		    width: 30%;
+		    height: 40px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+		    margin-top: 14%;
+		    margin-left: -10%;
+		    opacity: 0.5;
+		}
+
+		.viewOrderProbDiv a {
+			color: white;
+			text-decoration: none;
+			padding: 8px 25px;
+			font-size: 30px;
+			line-height: 40px;
+		}
+
+		/* Manage Button */
+		.manageOrderProbDiv {
+		    float: left;
+		    width: 30%;
+		    height: 40px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+		    margin-top: 27%;
+		    margin-left: -10%;
+		    opacity: 0.5;
+		}
+
+		.manageOrderProbDiv a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 8px 20px;
+		    font-size: 30px;
+		    line-height: 40px;
+		}
+
+		/* Table css */
+		table {
+		    width: 100%;
+		    margin-top: 2%;
+		    border-collapse: collapse;	
+		    margin-bottom: 5%;		
+		}
+
+		.topTableRowHeader {border: 2px solid black;}
+
+		.orderId {
+			width: 10%;
+			border-right: 2px solid black;
+		}
+
+		.createdDate {
+			width: 15%;
+			border-right: 2px solid black;
+		}
+
+		.issueDescription {
+		    width: 20%;
+		    border-right: 2px solid black;
+		}
+
+		.contentTableRow {
+			border-bottom: 2px solid black;
+		}
+
+		td {
+		    text-align: center;
+		    border-right: 2px solid black;
+		    border-left: 2px solid black;
+		    padding: 10px;
+		    line-height: 30px;
+		}
+
+		td a {
+		    padding: 5px 10px;
+		    border: 1px solid black;
+		    border-radius: 10px;
+		    color: white;
+			background: linear-gradient(#e1e3cf -40%, #2318e6 70%);
+		    text-decoration: none;
+		    opacity: 0.5;
+		}
+
+		td a:hover {
+			opacity: 1;
+		}
+
+		td a:first-child {
+			background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+			opacity: 0.5;
+		}
+
+		td a:first-child:hover {
+			opacity: 1;
+		}
+
+		td a:last-child {
+			background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+			opacity: 0.5;
+		}
+
+		td a:last-child:hover {
+			opacity: 1;
+		}
+
+
+		/************************************** Footer ****************************************/
+		.footerParentDivBackground {
+			background-color: #2f363f;
+			min-height: 100px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		/****************************************** Create/Review/Manage *******************************************************/
+		/********** Review **********/
+		.footerSiteNav {
+			float: left;
+			width: 18%;
+			padding-top: 1%;
+			border-right: 5px solid white;	
+		}
+
+		.footerSiteNav a {
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: orange;
+		    border-radius: 10px;
+		    display: inline-block;
+		    padding: 0.5em;
+		    text-align: center;
+		    margin-bottom: 10%;		
+		}
+
+		.footerSiteNav a:hover {
+			background-color: orange;
+			color: white;
+		}
+
+		/******************** Create ********************/
+
+		.footerSiteNav a:first-child {
+			color: green;
+		}
+
+		.footerSiteNav a:first-child:hover {
+			background-color: green;
+			color: white;
+		}
+
+		/**************** Manage *************************/
+		.footerSiteNav a:last-child {
+			color: indianred;
+		}
+
+		.footerSiteNav a:last-child:hover {
+			background-color: indianred;
+			color: white;
+		}
+
+
+		.footerSiteMapH3 {
+			color: white;
+			margin-top: 1% !important;		
+		}
+
+		.footerSiteMapP {
+			color: white;
+			text-align: center;
+			margin-bottom: 1%;			
+		}

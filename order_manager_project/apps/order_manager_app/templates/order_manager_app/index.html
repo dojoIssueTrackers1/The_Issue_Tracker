@@ -6,11 +6,7 @@
 		* {
 			margin: 0;
 			padding: 0;
-		}
-
-		#container {
-			width: 80%;
-			margin: 0 10%;
+			font-family: "helvetica new", sans-serif;
 		}
 
 		.cfb {clear:both;}
@@ -19,9 +15,67 @@
 
 
 		/* Welcome Header */
-		.welcomeHead {
-			margin: 1% 0% 5% 0%;
+		.headerParentDivBackground {
+			background-color: #2f363f;
 		}
+
+		.headerChildPosDiv {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.headerChildPosDiv h3 {
+			margin-top: 2%;
+		}
+
+		.siteDescriptioParentDiv {
+		    width: 40%;
+		    float: left;
+		    margin-left: 20%;
+		    margin-top: 2%;
+		}
+
+		.siteDescriptionChildDiv {
+			margin: 2% 0%;
+		}
+
+		.welcomeMessage {
+		    float: left;
+		    margin-left: 25%;
+		    color: white;
+		    margin-top: 2%;
+		}
+
+		.siteDescriptionH11 {
+		    color: white;
+		    opacity: 0.9;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+		.siteDescriptionH12 {
+		    margin-left: 15%;
+		    color: white;
+		    opacity: 0.7;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+		.siteDescriptionH13 {
+		    margin-left: 30%;
+		    color: white;
+		    opacity: 0.5;
+		    margin-bottom: 5%;
+		    float: left;
+		}
+
+
+		img {margin-top: 2%;}
+		ul {list-style-type: none;}
+		li {display: inline-block; margin-right: 2em;}
+		li:last-child {margin-right: 0;}
+		li a {color: white; text-decoration: none; opacity: 0.5;}
+		li a:hover {opacity: 1;}
 
 		/* Registration CSS */
 		.registerParentDiv {
@@ -90,13 +144,35 @@
 			color: red;
 		}
 
+		.footerParentDivBackground {
+			background-color: #2f363f;
+			min-height: 100px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
 	</style>
 </head>
 <body>
 	<div id="container">
-		<h1 class="welcomeHead">Welcome to Helper Buddy</h1>
+		<div class="headerParentDivBackground">
+			<!-- Header/Logo/Title/Navbar/User -->
+			<div class="headerChildPosDiv">
+				{% load static %}
+				<div class="FL">
+					<img src="{% static 'order_manager_app/img/logo.png' %}">
+					<div class="cfb"></div>
+				</div>
+
+				<div class="cfb"></div>
+
+				<!-- Site description -->
+			</div>
+		</div>
 		<!-- Register -->
-		<div>
+		<div style="margin-top: 7%; margin-left: 12%;">
 			<div class="registerParentDiv">
 				<h3>Register</h3>
 				<form action="/register" method="post" class="registerParentFormDiv">
@@ -152,7 +228,11 @@
 			</div>
 		</div>
 
+				<!-- Footer -->
+		<div class="footerParentDivBackground">
 
+
+		</div>
 	</div>
 </body>
 </html>
