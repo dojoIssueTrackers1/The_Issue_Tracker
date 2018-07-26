@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Details</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.mgT2P {margin-top: 2%;}
+
+		.FL {float: left;}
+		.FR {float: right;}
+
+		.cfb {
+			clear: both;
+		}
+
+		/* Navbar */
+		.headerParentDivBackground {
+			background-color: #2f363f;
+		}
+
+		.headerChildPosDiv {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.customChildPostDiv {
+			width: 75%;
+			margin: 5% auto;
+
+		}
+
+		.welcomeMessage {
+		    float: left;
+		    margin-left: 25%;
+		    color: white;
+		    margin-top: 2%;
+		}
+
+		img {margin-top: 2%;}
+		ul {list-style-type: none;}
+		li {display: inline-block; margin-right: 2em;}
+		li:last-child {margin-right: 0;}
+		li a {color: white; text-decoration: none; opacity: 0.5;}
+		li a:hover {opacity: 1;}
+
+
+		/* Details */
+		.detailsParentDiv {
+		    width: 50%;
+		    float: left;
+		    border: 2px solid black;
+		    margin-top: 8%;
+		    margin-left: 20%;			
+		}
+
+		h3 {padding: 10px;}
+
+		p {
+			margin-left: 10%;
+			margin-bottom: 5%;
+		}
+
+		form p {
+		    float: left;
+		    margin-right: 2%;
+		    width: 20%;
+		    font-size: 20px;			
+		}
+
+		form input[type='text'], form input[type='number'] {
+		    width: 60%;
+		    line-height: 30px;
+		    font-size: 20px;
+		    margin-bottom: 5%;
+		    border: 1px solid black;
+		    box-shadow: 3px 3px 0px 0px black;			
+		}
+
+		.editLink {
+		    float: right;
+		    border: 2px solid black;
+		    box-shadow: 2px 2px 0px 0px black;
+		    padding: 5px 20px;
+		    background-color: orange;
+		    color: white;
+		    text-decoration: none;
+		    margin: 5%;
+		}
+
+		.backLink {
+		    float: left;
+		    border: 2px solid black;
+		    box-shadow: 2px 2px 0px 0px black;
+		    padding: 5px 20px;
+		    background-color: indianred;
+		    color: white;
+		    text-decoration: none;
+		    margin: 5%;
+		}
+
+		.UpdateButton {
+			float: right;
+			width: 20%;
+			height: 2em;
+			margin-bottom: 2%;
+			margin-right: 8%;
+			color: white;
+			font-size: 22px;
+			border: 1px solid black;
+			box-shadow: 3px 3px 0px 0px black;
+			border-radius: 12px;
+			background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
+			cursor: pointer;
+		}
+
+
+		/* Footer */
+		.footerParentDivBackground {
+			background-color: #2f363f;
+			min-height: 100px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		/* Create/Review/Manage */
+		.footerSiteNav {
+		    margin: 2% 0%;
+		    float: left;		
+		}
+
+		.footerSiteNav a {
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: orange;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteNav a:hover {
+			background-color: orange;
+			color: white;
+		}
+
+		.footerSiteNav a:first-child {
+			color: green;
+		}
+
+		.footerSiteNav a:first-child:hover {
+			background-color: green;
+			color: white;
+		}
+
+		.footerSiteNav a:last-child {
+			color: indianred;
+		}
+
+		.footerSiteNav a:last-child:hover {
+			background-color: indianred;
+			color: white;
+		}
+
+		/* View/Edit/Delete*/
+		.footerSiteMapEdit {
+			float: left;
+			margin: 2%;
+		}
+
+		.footerSiteMapEdit a {  
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: royalblue;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em 0.8em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteMapEdit a:hover {
+			background-color: royalblue;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:first-child {
+			color: darkorange;
+		}
+
+		.footerSiteMapEdit a:first-child:hover {
+			background-color: darkorange;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:last-child {
+			color: red;
+		}
+
+		.footerSiteMapEdit a:last-child:hover {
+			background-color: red;
+			color: white;
+		}
+
+		.headerChildPosDiv h3 {
+			color: white;
+			margin-top: 1%;
+		}
+
+		.headerChildPosDiv p {
+			color: white;
+			text-align: center;
+			margin-bottom: 1%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="headerParentDivBackground">
+			<!-- Header/Logo/Title/Navbar/User -->
+			<div class="headerChildPosDiv">
+				{% load static %}
+				<div class="FL mgB5P">
+					<img src="{% static 'order_manager_app/img/logo.png' %}">
+					<div class="cfb"></div>
+				</div>
+
+				<div>
+					<h1 class="welcomeMessage">User</h1>
+				</div>
+
+				<!-- Navbar -->
+				<div class="FR mgT2P">
+					<ul class="mgT2P">
+						<li><a href="/dashboard">Home</a></li>
+						<li><a href="">Logout</a></li>
+					</ul>
+					<div class="cfb"></div>
+				</div>
+
+				<div class="cfb"></div>
+
+				<!-- Site description -->
+			</div>
+		</div>
+
+		<div class="headerChildPosDiv">
+			<div class="detailsParentDiv">
+				<form action="/update" method="POST">
+					{% csrf_token %}
+					<h3>Order Issue Details</h3>
+
+					<p>Order Number: </p>
+					<input type="Number" name="ord_num" min=1>
+
+					<p>Customer ID: </p>
+					<input type="Number" name="cust_id" min=1>
+
+					<p>Issue Type: </p>
+					<input type="text" name="issue">
+
+					<p>Description: </p>
+					<input type="text" name="description">
+
+					<p>Priority: </p>
+					<input type="number" name="priority" min=1 max=3>
+
+					<div class="cfb"></div>
+
+					<div class="FL">
+						<a href="/manage" class="backLink">Back</a>
+						<div class="cfb"></div>
+					</div>
+
+					<input type="submit" name="update" value="Update" class="UpdateButton">
+
+					<div class="cfb"></div>
+
+				</form>
+			</div>
+
+			<div class="cfb"></div>
+
+		</div>
+
+		<!-- Footer -->
+		<div class="footerParentDivBackground">
+			<div class="headerChildPosDiv">
+				<h3>Site Map</h3>
+				<div class="footerSiteNav">
+					<a href="/create">Create</a>
+					<a href="/create">Review</a>
+					<a href="/create">Manage</a>
+				</div>
+				<div class="footerSiteMapEdit">
+					<a href="/view">View</a>
+					<a href="/edit">Edit</a>
+					<a href="/manage">Delete</a>
+				</div>
+				<div class="cfb"></div>
+				<p>Copyright &copy2018</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>

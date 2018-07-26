@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#container {
+			width: 80%;
+			margin: 0 10%;
+		}
+
+		.cfb {clear:both;}
+
+		.txtc {text-align: center}
+
+
+		/* Welcome Header */
+		.welcomeHead {
+			margin: 1% 0% 5% 0%;
+		}
+
+		/* Registration CSS */
+		.registerParentDiv {
+			float: left;
+			width: 40%;
+			padding-top: 20px;
+			margin-left: 2%;
+		}
+
+		.registerTitle {
+		    margin-bottom: 5%;
+		    margin-left: 5%;
+		    transform: translateY(-37px);
+		    background-color: white;
+		    width: 20%;
+		    text-align: center;
+		    font-size: 25px;
+		    font-weight: 600;			
+		}
+
+		.registerParentFormDiv {
+			padding: 20px 5px;
+		}
+
+
+		.registerParentFormDiv p {
+			float: left;
+			width: 25%;
+			line-height: 40px;
+		}
+
+		.registerParentFormDiv input[type="text"], .registerParentFormDiv input[type="password"] {
+		    display: inline-block;
+		    float: left;
+		    width: 70%;
+		    margin-bottom: 2%;
+		    height: 40px;
+		    font-size: 20px;
+		    border: 2px solid black;
+		    box-shadow: 1px 1px 0px 0px black;		
+		}
+
+		.registerSubmitButton {
+			float: right;
+			padding: 5px 20px;
+			margin-right: 5%;
+			border: 2px solid black;
+			background-color: white;
+			box-shadow: 3px 3px 0px 0px black;
+			margin: 10% 5% 5% 0%;			
+		}
+
+		/* Login CSS */
+		.loginTitle {
+		    margin-bottom: 5%;
+		    margin-left: 5%;
+		    transform: translateY(-37px);
+		    background-color: white;
+		    width: 15%;
+		    text-align: center;
+		    font-size: 25px;
+		    font-weight: 600;			
+		}
+
+		span {
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1 class="welcomeHead">Welcome to Helper Buddy</h1>
+		<!-- Register -->
+		<div>
+			<div class="registerParentDiv">
+				<h3>Register</h3>
+				<form action="/register" method="post" class="registerParentFormDiv">
+					{% csrf_token %}
+					<p>First Name</p>
+					<input type="text" name="first_name">
+
+					<p>LastName</p>
+					<input type="text" name="last_name">
+
+					<p>Email</p>
+					<input type="text" name="email">
+
+					<p>Password</p>
+					<input type="password" name="pw">
+
+					<p>Confirm PW</p>
+					<input type="password" name="cpw">
+
+					<div class="cfb"></div>
+					{% for message in messages %}
+						<div>
+							<span>{{message}}</span>
+						</div>
+					{% endfor %}
+<!-- 					<input type="hidden" name="hidden" value="Register" class="submitButton"> -->
+					<input type="submit" name="register" value="Register" class="registerSubmitButton">
+
+				</form>
+			</div>
+		</div>
+
+		<div>
+			<div class="registerParentDiv">
+				<h3>Login</h3>
+				<form action="/login" method="post" class="registerParentFormDiv">
+					{% csrf_token %}
+					<p>Email</p>
+					<input type="text" name="LEmail">
+
+					<p>Password</p>
+					<input type="password" name="Lpw">
+
+					<div class="cfb"></div>
+					{% for message in messages %}
+						<div>
+							<span>{{message}}</span>
+						</div>
+					{% endfor %}
+					<input type="submit" name="login" value="Login" class="registerSubmitButton">
+
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>

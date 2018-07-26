@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show All</title>
+	<style type="text/css">
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.mgT2P {margin-top: 2%;}
+
+		.FL {float: left;}
+		.FR {float: right;}
+
+		.cfb {
+			clear: both;
+		}
+
+		/* Navbar */
+		.headerParentDivBackground {
+			background-color: #2f363f;
+		}
+
+		.headerChildPosDiv {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.customChildPostDiv {
+			width: 75%;
+			margin: 5% auto;
+
+		}
+
+		.welcomeMessage {
+		    float: left;
+		    margin-left: 25%;
+		    color: white;
+		    margin-top: 2%;
+		}
+
+		/* Logo and Navigation */
+		img {margin-top: 2%;}
+		ul {list-style-type: none;}
+		li {display: inline-block; margin-right: 2em;}
+		li:last-child {margin-right: 0;}
+		li a {color: white; text-decoration: none; opacity: 0.5;}
+		li a:hover {opacity: 1;}
+
+		/* Table css */
+		table {
+		    width: 100%;
+		    margin-top: 2%;
+		    border-collapse: collapse;	
+		    margin-bottom: 10%;		
+		}
+
+		.topTableRowHeader {border: 2px solid black;}
+
+		.orderId {
+			width: 10%;
+			border-right: 2px solid black;
+		}
+
+		.createdDate {
+			width: 15%;
+			border-right: 2px solid black;
+		}
+
+		.issueDescription {
+		    width: 20%;
+		    border-right: 2px solid black;
+		}
+
+		.contentTableRow {
+			border-bottom: 2px solid black;
+		}
+
+		td {
+		    text-align: center;
+		    border-right: 2px solid black;
+		    border-left: 2px solid black;
+		    padding: 10px;
+		    line-height: 30px;
+		}
+
+		td a {
+		    padding: 5px 10px;
+		    border: 1px solid black;
+		    border-radius: 10px;
+		    color: white;
+			background: linear-gradient(#e1e3cf -40%, #2318e6 70%);
+		    text-decoration: none;
+		    opacity: 0.5;
+		}
+
+		td a:hover {
+			opacity: 1;
+		}
+
+		td a:first-child {
+			background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+			opacity: 0.5;
+		}
+
+		td a:first-child:hover {
+			opacity: 1;
+		}
+
+		td a:last-child {
+			background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+			opacity: 0.5;
+		}
+
+		td a:last-child:hover {
+			opacity: 1;
+		}
+
+		.manageOrderProbDivShow {
+		    float: right;
+		    width: 9%;
+		    height: 30px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+		}
+
+		.manageOrderProbDivShow a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 6px 32px;
+		    font-size: 20px;
+		    line-height: 30px;
+		}
+
+
+		.backLink {
+		    float: left;
+		    border: 2px solid black;
+		    box-shadow: 2px 2px 0px 0px black;
+		    padding: 5px 20px;
+		    background-color: indianred;
+		    color: white;
+		    text-decoration: none;
+		    margin: 5%;
+		}
+
+				/* Footer */
+		.footerParentDivBackground {
+			background-color: #2f363f;
+			min-height: 100px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		/* Create/Review/Manage */
+		.footerSiteNav {
+		    margin: 2% 0%;
+		    float: left;		
+		}
+
+		.footerSiteNav a {
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: orange;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteNav a:hover {
+			background-color: orange;
+			color: white;
+		}
+
+		.footerSiteNav a:first-child {
+			color: green;
+		}
+
+		.footerSiteNav a:first-child:hover {
+			background-color: green;
+			color: white;
+		}
+
+		.footerSiteNav a:last-child {
+			color: indianred;
+		}
+
+		.footerSiteNav a:last-child:hover {
+			background-color: indianred;
+			color: white;
+		}
+
+		/* View/Edit/Delete*/
+		.footerSiteMapEdit {
+			float: left;
+			margin: 2%;
+		}
+
+		.footerSiteMapEdit a {  
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: royalblue;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em 0.8em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteMapEdit a:hover {
+			background-color: royalblue;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:first-child {
+			color: darkorange;
+		}
+
+		.footerSiteMapEdit a:first-child:hover {
+			background-color: darkorange;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:last-child {
+			color: red;
+		}
+
+		.footerSiteMapEdit a:last-child:hover {
+			background-color: red;
+			color: white;
+		}
+
+		.headerChildPosDiv h3 {
+			color: white;
+			margin-top: 1%;
+		}
+
+		.headerChildPosDiv p {
+			color: white;
+			text-align: center;
+			margin-bottom: 1%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="headerParentDivBackground">
+			<!-- Header/Logo/Title/Navbar/User -->
+			<div class="headerChildPosDiv">
+				{% load static %}
+				<div class="FL">
+					<img src="{% static 'order_manager_app/img/logo.png' %}">
+					<div class="cfb"></div>
+				</div>
+
+				<div>
+					<h1 class="welcomeMessage">User</h1>
+				</div>
+
+				<!-- Navbar -->
+				<div class="FR mgT2P">
+					<ul class="mgT2P">
+						<li><a href="/dashboard">Home</a></li>
+						<li><a href="">Logout</a></li>
+					</ul>
+					<div class="cfb"></div>
+				</div>
+
+				<div class="cfb"></div>
+
+			</div>
+		</div>
+
+		<div class="cfb"></div>
+
+		<!-- Order Issue Table -->
+		<div>
+			<div class="headerChildPosDiv">
+				<table>
+					<tbody>
+						<tr class="topTableRowHeader">
+							<th class="orderId">Order ID</th>
+							<th class="orderId">Customer ID</th>
+							<th class="createdDate">Created Date</th>
+							<th class="issueDescription">Issue</th>
+							<th class="issueDescription">Description</th>
+							<th class="orderId">Priority</th>
+						</tr>
+						<tr class="contentTableRow">
+							<td>8991022</td>
+							<td>5662233</td>
+							<td>July 25, 2018</td>
+							<td>Buyer's Remorse Return</td>
+							<td>The customer was dissatisfied with the color</td>
+							<td>1</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="headerChildPosDiv">
+				<div class="FL">
+					<a href="/dashboard" class="backLink">Back</a>
+					<div class="cfb"></div>
+				</div>
+			</div>
+
+			<div class="headerChildPosDiv">
+				<div class="manageOrderProbDivShow">
+					<a href="/manage">Manage</a>
+					<div class="cfb"></div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Footer -->
+		<div class="footerParentDivBackground">
+			<div class="headerChildPosDiv">
+				<h3>Site Map</h3>
+				<div class="footerSiteNav">
+					<a href="/create">Create</a>
+					<a href="/create">Review</a>
+					<a href="/create">Manage</a>
+				</div>
+				<div class="footerSiteMapEdit">
+					<a href="/view">View</a>
+					<a href="/edit">Edit</a>
+					<a href="/manage">Delete</a>
+				</div>
+				<div class="cfb"></div>
+				<p>Copyright &copy2018</p>
+			</div>
+		</div>
+
+
+	</div>
+</body>
+</html>

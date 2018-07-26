@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<style type="text/css">
+	/* Universal css */
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.cfb {
+			clear: both;
+		}
+
+		.FL {float: left;}
+		.FR {float: right;}
+		.mgT2P {margin-top: 2%;}
+		.mgT5P {margin-top: 5%;}
+
+		.headerParentDivBackground {
+			background-color: #2f363f;
+		}
+
+		.headerChildPosDiv {
+			width: 75%;
+			margin: 0 auto;
+		}
+
+		.headerChildPosDiv h3 {
+			margin-top: 2%;
+		}
+
+		.customChildPostDiv {
+			width: 75%;
+			margin: 5% auto;
+
+		}
+
+		.siteDescriptioParentDiv {
+		    width: 40%;
+		    float: left;
+		    margin-left: 20%;
+		}
+
+		.siteDescriptionChildDiv {
+			margin: 2% 0%;
+		}
+
+		.welcomeMessage {
+		    float: left;
+		    margin-left: 25%;
+		    color: white;
+		    margin-top: 2%;
+		}
+
+		.siteDescriptionH11 {
+		    color: white;
+		    opacity: 0.9;
+		    margin-bottom: 10%;
+		    float: left;
+		}
+
+		.siteDescriptionH12 {
+		    margin-left: 15%;
+		    color: white;
+		    opacity: 0.7;
+		    margin-bottom: 10%;
+		    float: left;
+		}
+
+		.siteDescriptionH13 {
+		    margin-left: 30%;
+		    color: white;
+		    opacity: 0.5;
+		    margin-bottom: 10%;
+		    float: left;
+		}
+
+
+		img {margin-top: 2%;}
+		ul {list-style-type: none;}
+		li {display: inline-block; margin-right: 2em;}
+		li:last-child {margin-right: 0;}
+		li a {color: white; text-decoration: none; opacity: 0.5;}
+		li a:hover {opacity: 1;}
+
+		/* Create Button */
+		.siteMainButtonsDiv {
+		    float: left;
+		    width: 25%;	
+		}
+		.createOrderProbDiv {
+		    float: left;
+		    width: 40%;
+		    height: 60px;
+		    margin-left: -10%;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #3d9926 70%);
+		    opacity: 0.5;
+		}
+
+		.createOrderProbDiv a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 8px 43px;
+		    cursor: pointer;
+		    font-size: 40px;
+		    line-height: 60px;
+		}
+
+		.createOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+		.viewOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+		.manageOrderProbDiv:hover {
+			opacity: 1.0;
+		}
+
+		/* View Button */
+		.viewOrderProbDiv {
+		    float: left;
+		    width: 40%;
+		    height: 60px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+		    margin-top: 20%;
+		    margin-left: -20%;
+		    opacity: 0.5;
+		}
+
+		.viewOrderProbDiv a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 8px 35px;
+		    font-size: 40px;
+		    line-height: 60px;
+		}
+
+		/* Manage Button */
+		.manageOrderProbDiv {
+		    float: left;
+		    width: 40%;
+		    height: 60px;
+		    border: 2px solid black;
+		    border-radius: 12px;
+		    background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+		    margin-top: 40%;
+		    margin-left: -20%;
+		    opacity: 0.5;
+		}
+
+		.manageOrderProbDiv a {
+		    color: white;
+		    text-decoration: none;
+		    padding: 8px 32px;
+		    font-size: 40px;
+		    line-height: 60px;
+		}
+
+		/* Table css */
+		table {
+		    width: 100%;
+		    margin-top: 2%;
+		    border-collapse: collapse;	
+		    margin-bottom: 10%;		
+		}
+
+		.topTableRowHeader {border: 2px solid black;}
+
+		.orderId {
+			width: 10%;
+			border-right: 2px solid black;
+		}
+
+		.createdDate {
+			width: 15%;
+			border-right: 2px solid black;
+		}
+
+		.issueDescription {
+		    width: 20%;
+		    border-right: 2px solid black;
+		}
+
+		.contentTableRow {
+			border-bottom: 2px solid black;
+		}
+
+		td {
+		    text-align: center;
+		    border-right: 2px solid black;
+		    border-left: 2px solid black;
+		    padding: 10px;
+		    line-height: 30px;
+		}
+
+		td a {
+		    padding: 5px 10px;
+		    border: 1px solid black;
+		    border-radius: 10px;
+		    color: white;
+			background: linear-gradient(#e1e3cf -40%, #2318e6 70%);
+		    text-decoration: none;
+		    opacity: 0.5;
+		}
+
+		td a:hover {
+			opacity: 1;
+		}
+
+		td a:first-child {
+			background: linear-gradient(#e1e3cf -40%, #cc6c2c 70%);
+			opacity: 0.5;
+		}
+
+		td a:first-child:hover {
+			opacity: 1;
+		}
+
+		td a:last-child {
+			background: linear-gradient(#e1e3cf -40%, #d1120b 70%);
+			opacity: 0.5;
+		}
+
+		td a:last-child:hover {
+			opacity: 1;
+		}
+
+
+		/* Footer */
+		.footerParentDivBackground {
+			background-color: #2f363f;
+			min-height: 100px;
+			position: fixed;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+		}
+
+		/* Create/Review/Manage */
+		.footerSiteNav {
+		    margin: 2% 0%;
+		    float: left;		
+		}
+
+		.footerSiteNav a {
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: orange;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteNav a:hover {
+			background-color: orange;
+			color: white;
+		}
+
+		.footerSiteNav a:first-child {
+			color: green;
+		}
+
+		.footerSiteNav a:first-child:hover {
+			background-color: green;
+			color: white;
+		}
+
+		.footerSiteNav a:last-child {
+			color: indianred;
+		}
+
+		.footerSiteNav a:last-child:hover {
+			background-color: indianred;
+			color: white;
+		}
+
+		/* View/Edit/Delete*/
+		.footerSiteMapEdit {
+			float: left;
+			margin: 2%;
+		}
+
+		.footerSiteMapEdit a {  
+		    text-decoration: none;
+		    margin-right: 2%;
+		    border: 2px solid black;
+		    color: royalblue;
+		    border-radius: 10px;
+		    display: block;
+		    padding: 0.5em 0.8em;
+		    text-align: center;
+		    margin-bottom: 10%;			
+		}
+
+		.footerSiteMapEdit a:hover {
+			background-color: royalblue;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:first-child {
+			color: darkorange;
+		}
+
+		.footerSiteMapEdit a:first-child:hover {
+			background-color: darkorange;
+			color: white;
+		}
+
+		.footerSiteMapEdit a:last-child {
+			color: red;
+		}
+
+		.footerSiteMapEdit a:last-child:hover {
+			background-color: red;
+			color: white;
+		}
+
+		.headerChildPosDiv h3 {
+			color: white;
+			margin-top: 1%;
+		}
+
+		.headerChildPosDiv p {
+			color: white;
+			text-align: center;
+			margin-bottom: 1%;
+		}
+
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="headerParentDivBackground">
+			<!-- Header/Logo/Title/Navbar/User -->
+			<div class="headerChildPosDiv">
+				{% load static %}
+				<div class="FL">
+					<img src="{% static 'order_manager_app/img/logo.png' %}">
+					<div class="cfb"></div>
+				</div>
+
+				<div>
+					<h1 class="welcomeMessage">Welcome User</h1>
+				</div>
+
+				<!-- Navbar -->
+				<div class="FR mgT2P">
+					<ul class="mgT2P">
+						<li><a href="">Home</a></li>
+						<li><a href="">Logout</a></li>
+					</ul>
+					<div class="cfb"></div>
+				</div>
+
+				<div class="cfb"></div>
+
+				<!-- Site description -->
+			</div>
+
+			<!-- Navigation Descriptions Main -->
+			<div class="customChildPostDiv">
+				<div class="siteDescriptioParentDiv">
+					<div class="siteDescriptionChildDiv">
+						<h1 class="siteDescriptionH11">Create an order issue</h1>
+						<h1 class="siteDescriptionH12">Review your order issues</h1>
+						<h1 class="siteDescriptionH13">Manage your order issues</h1>
+					</div>
+				</div>
+			</div>
+
+			<!-- Navigation Buttons Main -->
+
+			<div class="siteMainButtonsDiv">
+				<div class="createOrderProbDiv">
+					<a href="/create">Create</a>
+					<div class="cfb"></div>
+				</div>
+
+				<div class="viewOrderProbDiv">
+					<a href="/show_all">Review</a>
+				</div>
+
+				<div class="manageOrderProbDiv">
+					<a href="/manage">Manage</a>
+				</div>
+			</div>
+
+			<div class="cfb"></div>
+
+		</div>
+
+		<!-- User Display Table -->
+
+		<div>
+			<div class="headerChildPosDiv">
+				<h3>Top Issues</h3>
+				<table>
+					<tbody>
+						<tr class="topTableRowHeader">
+							<th class="orderId">Order Number</th>
+							<th class="orderId">Customer ID</th>
+							<th class="createdDate">Created Date</th>
+							<th class="issueDescription">Issue Type</th>
+							<th class="issueDescription">Description</th>
+							<th class="orderId">Priority</th>
+							<th>Actions</th>
+						</tr>
+						<tr class="contentTableRow">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>
+								<a href="/view">View</a>
+								<a href="/edit">Edit</a>
+								<a href="/dashboard">Delete</a>
+							</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="footerParentDivBackground">
+			<div class="headerChildPosDiv">
+				<h3>Site Map</h3>
+				<div class="footerSiteNav">
+					<a href="/create">Create</a>
+					<a href="/create">Review</a>
+					<a href="/create">Manage</a>
+				</div>
+				<div class="footerSiteMapEdit">
+					<a href="/view">View</a>
+					<a href="/edit">Edit</a>
+					<a href="/manage">Delete</a>
+				</div>
+				<div class="cfb"></div>
+				<p>Copyright &copy2018</p>
+			</div>
+		</div>
+
+	</div>
+</body>
+</html>
